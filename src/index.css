@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&family=Montserrat:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Georgia", serif;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+  --color-brand-red: #8B0000;
+  --color-brand-red-bright: #A52A2A;
+  --color-brand-accent: #FFFFFF;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-red text-white font-sans antialiased selection:bg-white selection:text-brand-red;
+    background: radial-gradient(circle at center, #A52A2A 0%, #8B0000 100%);
+  }
+}
+
+.geometric-container {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  @apply m-5 min-h-[calc(100vh-40px)] flex flex-col relative;
+}
+
+.geometric-border-b {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.geometric-border-t {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.geometric-border-r {
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.geometric-card {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  @apply bg-white/10 backdrop-blur-sm transition-all duration-300;
+  border-radius: 0px; /* Precise geometric feel */
+}
+
+.geometric-button {
+  @apply px-5 py-2 border border-white text-white text-[12px] uppercase tracking-[2px] transition-all duration-300 hover:bg-white hover:text-brand-red;
+  border-radius: 0px;
+}
+
+.sub-brand-line {
+  @apply text-[18px] uppercase tracking-[12px] opacity-90 py-2 w-full max-w-[400px] border-t border-b border-white/30 text-center;
+}
+
+.img-strip-grid {
+  @apply grid grid-cols-2 md:grid-cols-6 h-auto md:h-[180px] border-t border-b border-white/30;
+}
+
+.img-box-item {
+  @apply border-r border-white/30 p-4 flex flex-col justify-end relative overflow-hidden bg-white/5 last:border-r-0;
+}
+
+.stat-val {
+  @apply font-serif text-[20px] font-bold;
+}
+
+.stat-label {
+  @apply text-[9px] uppercase opacity-60;
+}
